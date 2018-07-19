@@ -7,19 +7,17 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\car;
 
-class InsertCarTest extends TestCase
+class UpdateCarTest extends TestCase
 {
     /**
      * A basic test example.
      *
      * @return void
      */
-    public function testInsertCar()
+    public function testUpdateCar()
     {
-        $car = new Car();
-        $car->Make = 'ford';
-        $car->Model = 'x';
-        $car->year = '1991';
+        $car = Car::find(50);
+        $car->year = '2000';
         $this->assertTrue($car->save());
     }
 }
