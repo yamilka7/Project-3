@@ -7,17 +7,16 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\car;
 
-class CountCarTest extends TestCase
+class DeleteCarTest extends TestCase
 {
     /**
      * A basic test example.
      *
      * @return void
      */
-    public function testCarCount()
+    public function testDeleteCar()
     {
-        $car = Car::All();
-        $carsCount = $car->count();
-        $this->assertEquals(50, $carsCount);
+        $car = Car::find(1);
+        $this->assertTrue($car->delete());
     }
 }
